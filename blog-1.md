@@ -6,7 +6,7 @@ runtime এ error অনেক কমে যায় ও কোড আরও relia
 সুবিধা প্রদান করে। any হলো typescript এর একটি type যা এই পুরো type safety system কে bypass করে দেয়
 এজন্যই any কে অনেক  **type safety hole** বলা হয়ে থাকে।
 অন্যদিকে unknown একই ধরনের flexible behavior দিলেও অনেক বেশি secure এবং safe approach প্রদান করে।
-### Why any is labeled as type safety hole?
+## Why any is labeled as type safety hole?
 যখন কোনো varibale ,value, function parameter, array বা অন্য যেকোনো data 
 এর type any দেয়া হয় তখন Typescript সেই data এর উপর type checking বন্ধ করে দেয়।
 তখন এটি normal Javascript এর কোডের মত behave করে, Typescript এর মূল
@@ -23,7 +23,7 @@ type use করলে Typescript type checking বন্ধ করে দেয় 
 এর কারণে error দিবে , যেটা বড় project এ সমস্যা করতে পারে , তাই typescript 
 is labeled as **"type safety hole"**.
 
-### why is unknown the safer choice for handling unpredictable data
+## why is unknown the safer choice for handling unpredictable data
 unknown ও any এর মত same data ধরণ করতে পারে কিন্তু এক্ষেত্রে Typescript
 আমাদের কে type safety প্রদান করে। যেমন:
 ```typescript
@@ -35,7 +35,7 @@ value.toUpperCase()
 বাধ্য করে , আর এই behavior ই unknown কে safe করে তোলে।
 
 
-### Understanding Type Narrowing
+## Understanding Type Narrowing
 Type narrowing হলো এমন একটি process যেখানে TypeScript check করে variable এর actual type কী, তারপর সেই অনুযায়ী access করতে দেয়।
 এখানে conditon এর মাধ্যমে data type check করা হয় যার কারনে varibale এর actual
 type identify করা হয় ,আর এভাবে type গুলা ছোট হয়ে আসে , যেটাকে type narrowing
@@ -51,10 +51,10 @@ if (typeof value === "string") {
 তাই এখন safely toUpperCase() method ব্যবহার করা যাচ্ছে।
 এই process কেই বলা হয় type narrowing।
 
-### Conclusion
+## Conclusion
 any TypeScript এর type safety completely bypass করে দেয় type safety check
 এর ভেতর একটি hole করে যার কারণে typescript type check করতে পারে না ,
-এজন্য একে “type safety hole” বলা হয়।অন্যদিকে unknown developer 
-কে আগে type verify করতে বাধ্য করে, তাই unknown হলো safer choice or handling 
-unpredictable data।আর Type narrowing হলো এমন একটি technique যেখানে TypeScript condition check এর মাধ্যমে variable এর actual type identify করে। যেমন typeof, Array.isArray() বা অন্য condition ব্যবহার করে TypeScript বুঝে ফেলে data টি string, array বা অন্য কোনো specific type কিনা। এরপর সেই নির্দিষ্ট type অনুযায়ী safely method বা property ব্যবহার করতে দেয়।
+এজন্য একে “type safety hole” বলা হয়।
+অন্যদিকে unknown developer কে আগে type verify করতে বাধ্য করে, তাই unknown হলো safer choice or handling unpredictable data।
+আর Type narrowing হলো এমন একটি technique যেখানে TypeScript condition check এর মাধ্যমে variable এর actual type identify করে। যেমন typeof বা অন্য condition ব্যবহার করে TypeScript বুঝে ফেলে data টি string, array বা অন্য কোনো specific type কিনা। এরপর সেই নির্দিষ্ট type অনুযায়ী safely method বা property ব্যবহার করতে দেয়।
 
