@@ -52,3 +52,9 @@ if (typeof value === "string") {
 এই process কেই বলা হয় type narrowing।
 
 ### Conclusion
+any TypeScript এর type safety completely bypass করে দেয় type safety check
+এর ভেতর একটি hole করে যার কারণে typescript type check করতে পারে না ,
+এজন্য একে “type safety hole” বলা হয়।অন্যদিকে unknown developer 
+কে আগে type verify করতে বাধ্য করে, তাই unknown হলো safer choice or handling 
+unpredictable data।আর Type narrowing হলো এমন একটি technique যেখানে TypeScript condition check এর মাধ্যমে variable এর actual type identify করে। যেমন typeof, Array.isArray() বা অন্য condition ব্যবহার করে TypeScript বুঝে ফেলে data টি string, array বা অন্য কোনো specific type কিনা। এরপর সেই নির্দিষ্ট type অনুযায়ী safely method বা property ব্যবহার করতে দেয়।
+
