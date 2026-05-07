@@ -50,7 +50,7 @@ if (typeof value === "string") {
 এই process কেই বলা হয় type narrowing।
 
 ## Conclusion
-any TypeScript-এর type safety সম্পূর্ণ bypass করে দেয়। এটি type checking-এর ভিতরে একটি “hole” তৈরি করে, যার কারণে TypeScript variable-এর প্রকৃত type যাচাই করতে পারে না। এজন্য any-কে প্রায়ই “type safety hole” বলা হয়।
+any TypeScript-এর type safety সম্পূর্ণ নিষ্ক্রিয় করে দেয়। এটি type checking-এর ভিতরে একটি “hole” তৈরি করে, যার কারণে TypeScript variable-এর প্রকৃত type যাচাই করতে পারে না। এজন্য any-কে প্রায়ই “type safety hole” বলা হয়।
 অন্যদিকে unknown developer কে আগে type verify করতে বাধ্য করে, তাই unknown হলো safer choice or handling unpredictable data।
 আর Type narrowing হলো এমন একটি technique যেখানে TypeScript condition check এর মাধ্যমে variable এর actual type identify করে। যেমন typeof বা অন্য condition ব্যবহার করে TypeScript বুঝে ফেলে data টি string, array বা অন্য কোনো specific type কিনা। এরপর সেই নির্দিষ্ট type অনুযায়ী safely method বা property ব্যবহার করতে দেয়।
 
