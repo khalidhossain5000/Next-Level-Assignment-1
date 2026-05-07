@@ -7,9 +7,9 @@ function reverseString(input: string): string {
   return input.split("").reverse().join("");
 }
 
-type InputType = string | number;
+type StringOrNumber  = string | number;
 
-function checkType(input: InputType): string {
+function checkType(input: StringOrNumber ): string {
   if (typeof input === "string") {
     return "String";
   } else {
@@ -27,7 +27,7 @@ interface Book {
   publishedYear: number;
 }
 
-function toggleReadStatus(bookDetails: Book) {
+function toggleReadStatus(bookDetails: Book) :Book & {isRead:boolean} {
   return {
     ...bookDetails,
     isRead: true,
