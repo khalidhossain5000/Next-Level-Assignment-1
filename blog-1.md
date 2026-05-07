@@ -1,9 +1,7 @@
-# Why is any labeled a "type safety hole," and why is unknown the safer choice for handling unpredictable data? Explain the concept of type narrowing.
+## Why is any labeled a "type safety hole," and why is unknown the safer choice for handling unpredictable data? Explain the concept of type narrowing.
 
 ## Introduction
-Typescript এর মূল সুবিধা হলো এটি আমাদের code এ data type safety প্রদান করে এবং ভুল type use করলে কোড run করার আগেই আমাদের error দেয় অর্থাৎ compile time এই এটি error ধরে ফেলে ,যার কারণে
-runtime এ error অনেক কমে যায় ও কোড আরও reliable হয় , যা বড় প্রজেক্ট এ অনেক 
-সুবিধা প্রদান করে। any হলো typescript এর একটি type যা এই পুরো type safety system কে bypass করে দেয়
+Typescript এর মূল সুবিধা হলো এটি আমাদের code এ data type safety প্রদান করে এবং ভুল type use করলে কোড run করার আগেই আমাদের error দেয় অর্থাৎ compile time এই এটি error ধরে ফেলে ,যার কারণে runtime এ error অনেক কমে যায় ও কোড আরও reliable হয় , যা বড় প্রজেক্ট এ অনেক সুবিধা প্রদান করে। any হলো typescript এর একটি type যা এই পুরো type safety system কে bypass করে দেয়।
 এজন্যই any কে অনেক  **type safety hole** বলা হয়ে থাকে।
 অন্যদিকে unknown একই ধরনের flexible behavior দিলেও অনেক বেশি secure এবং safe approach প্রদান করে।
 ## Why any is labeled as type safety hole?
@@ -19,12 +17,12 @@ data.reverse()
 এখানে data varibale এ any type use করা হয়েছে এবং এর উপর string method ও
 reverse array method use করা হলেও typescript কোনো error দিবে না কারন any
 type use করলে Typescript type checking বন্ধ করে দেয় এবং ধরে নেয় Developer
-যা করছে সেটই সঠিক, কিন্তু এই code run করলে run time এহ reverse array method
-এর কারণে error দিবে , যেটা বড় project এ সমস্যা করতে পারে , তাই typescript 
+যা করছে সেটই সঠিক, কিন্তু এই code run করলে run time এ reverse array method
+এর কারণে error দিবে , যেটা বড় project এ সমস্যা করতে পারে , তাই typescript এ any
 is labeled as **"type safety hole"**.
 
 ## why is unknown the safer choice for handling unpredictable data
-unknown ও any এর মত same data ধরণ করতে পারে কিন্তু এক্ষেত্রে Typescript
+unknown ও any এর মত same data  করতে পারে কিন্তু এক্ষেত্রে Typescript
 আমাদের কে type safety প্রদান করে। যেমন:
 ```typescript
 let value:unknown="Hello Typescript unknown Type"
@@ -52,9 +50,7 @@ if (typeof value === "string") {
 এই process কেই বলা হয় type narrowing।
 
 ## Conclusion
-any TypeScript এর type safety completely bypass করে দেয় type safety check
-এর ভেতর একটি hole করে যার কারণে typescript type check করতে পারে না ,
-এজন্য একে “type safety hole” বলা হয়।
+any TypeScript-এর type safety সম্পূর্ণ bypass করে দেয়। এটি type checking-এর ভিতরে একটি “hole” তৈরি করে, যার কারণে TypeScript variable-এর প্রকৃত type যাচাই করতে পারে না। এজন্য any-কে প্রায়ই “type safety hole” বলা হয়।
 অন্যদিকে unknown developer কে আগে type verify করতে বাধ্য করে, তাই unknown হলো safer choice or handling unpredictable data।
 আর Type narrowing হলো এমন একটি technique যেখানে TypeScript condition check এর মাধ্যমে variable এর actual type identify করে। যেমন typeof বা অন্য condition ব্যবহার করে TypeScript বুঝে ফেলে data টি string, array বা অন্য কোনো specific type কিনা। এরপর সেই নির্দিষ্ট type অনুযায়ী safely method বা property ব্যবহার করতে দেয়।
 
