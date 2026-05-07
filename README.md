@@ -1,4 +1,4 @@
-# Project Overview
+# Overview
 
 This repository contains solutions and blog write-ups for an Advanced Problem Solving with TypeScript & Object-Oriented Programming (OOP) assignment. The work focuses on strengthening core TypeScript concepts such as type safety, interfaces, classes, inheritance, abstraction, polymorphism, encapsulation, and type narrowing.
 
