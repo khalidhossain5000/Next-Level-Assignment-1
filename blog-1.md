@@ -1,4 +1,4 @@
-## Why is any labeled a "type safety hole," and why is unknown the safer choice for handling unpredictable data? Explain the concept of type narrowing.
+## 1.Why is any labeled a "type safety hole," and why is unknown the safer choice for handling unpredictable data? Explain the concept of type narrowing.
 
 ## Introduction
 Typescript এর মূল সুবিধা হলো এটি আমাদের code এ data type safety প্রদান করে এবং ভুল type use করলে কোড run করার আগেই আমাদের error দেয় অর্থাৎ compile time এই এটি error ধরে ফেলে ,যার কারণে runtime এ error অনেক কমে যায় ও কোড আরও reliable হয় , যা বড় প্রজেক্ট এ অনেক সুবিধা প্রদান করে। any হলো typescript এর একটি type যা এই পুরো type safety system কে bypass করে দেয়।

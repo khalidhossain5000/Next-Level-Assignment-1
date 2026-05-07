@@ -28,9 +28,9 @@ interface Book {
   publishedYear: number;
 }
 
-function toggleReadStatus(bookDetails: Book) :Book & {isRead:boolean} {
+function toggleReadStatus(book: Book) :Book & {isRead:boolean} {
   return {
-    ...bookDetails,
+    ...book,
     isRead: true,
   };
 }
@@ -61,3 +61,4 @@ function getIntersection(numbers1: number[], numbers2: number[]) {
   const commonNumbers = numbers1.filter((number) => numbers2.includes(number));
   return commonNumbers;
 }
+
